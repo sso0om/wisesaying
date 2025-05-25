@@ -30,4 +30,8 @@ public class WiseSaying {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public void printWiseSaying() {
+        System.out.printf("%d / %s / %s%n", id, content, author);
+    }
 }
