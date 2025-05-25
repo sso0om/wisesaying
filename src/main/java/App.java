@@ -8,7 +8,6 @@ public class App {
     public void run() {
         Scanner sc = new Scanner(System.in);
         System.out.println("== 명언 앱 ==");
-        int registerNo = 0;
 
         while (true) {
             System.out.print("명령) ");
@@ -17,14 +16,14 @@ public class App {
             if (cmd.equals("종료")) {
                 break;
             } else if (cmd.equals("등록")) {
-                registerNo++;
                 System.out.print("명언 : ");
-                sc.nextLine();
+                String content = sc.nextLine();
 
                 System.out.print("작가 : ");
-                sc.nextLine();
+                String author = sc.nextLine();
 
-                System.out.printf("%d번 명언이 등록되었습니다.%n", registerNo);
+                WiseSaying wiseSaying = new WiseSaying(content, author);
+                System.out.printf("%d번 명언이 등록되었습니다.%n", wiseSaying.getId());
             }
         }
         sc.close();
