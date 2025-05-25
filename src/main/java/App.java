@@ -52,12 +52,17 @@ public class App {
      * @param id
      */
     private void deleteWiseSaying(long id) {
+        boolean hasId = false;
         for (int i = 0; i < wiseSayingList.size(); i++) {
             if (wiseSayingList.get(i).getId() == id) {
+                hasId = true;
                 wiseSayingList.remove(i);
                 System.out.printf("%d번 명언이 삭제되었습니다.%n", id);
                 break;
             }
+        }
+        if (!hasId) {
+            System.out.printf("%d번 명언은 존재하지 않습니다.%n", id);
         }
     }
 
